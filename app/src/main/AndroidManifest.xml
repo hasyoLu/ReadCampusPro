@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.woodnoisu.reader">
+    package="com.hasyolu.readcampus">
 
     <dist:module dist:instant="true" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.woodnoisu.reader.App"
+        android:name="com.hasyolu.readcampus.App"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
@@ -25,13 +25,13 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true">
         <provider
-            android:name=".base.ContextProvider"
+            android:name="com.hasyolu.readcampus.base.ContextProvider"
             android:authorities="${applicationId}.contextprovider"
             android:exported="false" />
-        <activity android:name="com.woodnoisu.reader.ui.main.MainActivity"/>
-        <activity android:name="com.woodnoisu.reader.ui.novelRead.NovelReadActivity"/>
+        <activity android:name="com.hasyolu.readcampus.ui.main.MainActivity"/>
+        <activity android:name="com.hasyolu.readcampus.ui.novelRead.NovelReadActivity"/>
         <activity
-            android:name="com.woodnoisu.reader.ui.StartActivity"
+            android:name="com.hasyolu.readcampus.ui.StartActivity"
             android:theme="@style/startTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
