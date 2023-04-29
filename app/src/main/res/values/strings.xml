@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Reader</string>
+    <string name="book">书架</string>
+    <string name="recommend">推荐</string>
+    <string name="stack">书库</string>
+    <string name="more">更多</string>
+    <string name="choose_language">语言选择</string>
+    <string name="a_simple">简体中文</string>
+    <string name="a_traditional">繁体中文</string>
+    <string name="update_time">按更新时间</string>
+    <string name="read_time">按阅读时间</string>
+
+    <string name="empty_info"> </string>
+    <string name="common_no_data">没有相关数据!</string>
+    <string name="clear_book">清空书架列表</string>
+
+    <!--more-->
+    <string name="opinions">意见与反馈</string>
+    <string name="appraise">评价</string>
+    <string name="setting">设置</string>
+
+    <!--阅读器-->
+    <string name="contents">目录</string>
+    <string name="light">亮度</string>
+    <string name="cache">缓存</string>
+    <string name="brief">简介</string>
+    <string name="label">标签</string>
+
+    <string name="d_cache_num">缓存多少章？</string>
+    <string name="d_cache_last_50">后面五十章</string>
+    <string name="d_cache_last_all">后面全部</string>
+    <string name="d_cache_all">全部</string>
+
+    <string name="font">字体</string>
+    <string name="simple_font">简体</string>
+    <string name="traditional_font">繁体</string>
+    <string name="font_size">字号</string>
+    <string name="font_bg">背景</string>
+
+    <string name="book_read_mode_day">夜间</string>
+    <string name="net_error">加入书架失败,请检查网络设置</string>
+    <string name="add_bookmark">新增书签</string>
+    <string name="clear_bookmark">清除</string>
+    <string name="download_loading">%d/%d</string>
+    <string name="downloading">正在下载</string>
+
+    <!--  翻页  -->
+    <string name="page_mode">翻页</string>
+    <string name="simulation">仿真</string>
+    <string name="cover">覆盖</string>
+    <string name="scroll">滚动</string>
+    <string name="none">无</string>
+
+    <string name="book_read_mode_night">白天</string>
+
+</resources>
