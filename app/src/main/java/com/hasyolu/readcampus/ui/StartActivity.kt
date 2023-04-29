@@ -2,6 +2,8 @@ package com.hasyolu.readcampus.ui
 
 import com.hasyolu.readcampus.R
 import com.hasyolu.readcampus.base.BaseActivity
+import com.hasyolu.readcampus.ui.login.LoginActivity
+import com.hasyolu.readcampus.ui.login.LoginHelper
 import com.hasyolu.readcampus.ui.main.MainActivity
 import kotlinx.coroutines.*
 
@@ -30,9 +32,11 @@ class StartActivity: BaseActivity() {
         // 主线程
         GlobalScope.launch(Dispatchers.Main) {
             delay(1000)
-
-            MainActivity.startFromActivity(this@StartActivity)
-
+            if (LoginHelper.isLoggedIn()) {
+                MainActivity.startFromActivity(this@StartActivity)
+            } else {
+                LoginActivity.startFromActivity(this@StartActivity)
+            }
             delay(500)
             //完成
             finish()

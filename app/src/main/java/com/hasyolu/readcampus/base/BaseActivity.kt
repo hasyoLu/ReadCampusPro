@@ -1,8 +1,10 @@
 package com.hasyolu.readcampus.base
 
+import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -160,6 +162,61 @@ abstract class BaseActivity : AppCompatActivity() {
       dialog.title(text = newTitle)
       dialog.show()
     }
+  }
+
+
+  /**
+   * Toasty：显示错误Toast
+   */
+  fun showErrorToast(
+    context: Context?,
+    msg: String,
+    withIcon: Boolean = true,
+    duration: Int = Toast.LENGTH_SHORT
+  ) {
+    context?.let {
+      Toast.makeText(it, msg, duration).show()
+    }
+  }
+
+  /**
+   * Toasty：显示成功Toast
+   */
+  fun showSuccessToast(
+    context: Context?,
+    msg: String,
+    withIcon: Boolean = true,
+    duration: Int = Toast.LENGTH_SHORT
+  ) {
+    context?.let {
+      Toast.makeText(context, msg, duration).show()
+    }
+  }
+
+  /**
+   * Toasty：显示信息Toast
+   */
+  fun showInfoToast(
+    context: Context,
+    msg: String,
+    withIcon: Boolean = true,
+    duration: Int = Toast.LENGTH_SHORT
+  ) {
+    // Toasty.info(context, msg, duration, withIcon).show()
+    Toast.makeText(context, msg, duration).show()
+  }
+
+  /**
+   * Toasty：显示警告Toast
+   */
+  fun showWarningToast(
+    context: Context,
+    msg: String,
+    withIcon: Boolean = true,
+    duration: Int = Toast.LENGTH_SHORT
+  ) {
+    // Toasty.warning(context, msg, duration, withIcon).show()
+    Toast.makeText(context, msg, duration).show()
   }
 
   //  protected inline fun <reified T : ViewDataBinding> binding(
