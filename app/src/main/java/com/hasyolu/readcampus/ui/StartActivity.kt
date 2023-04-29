@@ -29,7 +29,7 @@ class StartActivity: BaseActivity() {
     override fun initData(){
         // 主线程
         GlobalScope.launch(Dispatchers.Main) {
-            delay(500)
+            delay(1000)
 
             MainActivity.startFromActivity(this@StartActivity)
 
