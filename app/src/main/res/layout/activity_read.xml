@@ -68,7 +68,7 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.woodnoisu.reader.ui.widget.page.PageView
+        <com.hasyolu.readcampus.ui.widget.page.PageView
             android:id="@+id/read_pv_page"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -194,18 +194,14 @@ dependencies {
 
     //图片库
     implementation "io.coil-kt:coil:$versions.coilVersion"
-    // 处理权限相关
-    //implementation "pub.devrel:easypermissions:$versions.easypermissionsVersion"
 
-//    // RxJava
-//    implementation "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlinVersion"
-//    api "io.reactivex.rxjava2:rxandroid:$versions.rxandroidVersion"
-//    api "io.reactivex.rxjava2:rxjava:$versions.rxjavaVersion"
-//    api "org.reactivestreams:reactive-streams:$versions.reactivestreamsVersion"
-
-    // 其他
-    //implementation "androidx.multidex:multidex:$versions.multidexVersion"
-    //implementation project(path: ':readerlib')
+    //BMob
+    implementation 'io.github.bmob:android-sdk:3.8.21'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    implementation 'com.squareup.okio:okio:2.2.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 
 apply from: "$rootDir/spotless.gradle"

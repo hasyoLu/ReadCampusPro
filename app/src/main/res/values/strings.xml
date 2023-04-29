@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reader</string>
+    <string name="app_name">R校园</string>
     <string name="book">书架</string>
     <string name="recommend">推荐</string>
     <string name="stack">书库</string>
@@ -52,5 +52,23 @@
     <string name="none">无</string>
 
     <string name="book_read_mode_night">白天</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">请输入手机号</string>
+    <string name="prompt_password">请输入验证码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_register">注册</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">手机号格式不正确</string>
+    <string name="invalid_password">验证码格式错误</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="Login_TopText">手机快捷登录</string>
+    <string name="Login_middleText">未注册的手机验证后会自动注册</string>
+    <string name="Login_GetCode">获取验证码</string>
+    <string name="userId">学习怪: </string>
+    <string name="inputError">手机号或者验证码输入错误</string>
+    <string name="sendAutoCodeError">验证失败，请从新登录</string>
 
 </resources>

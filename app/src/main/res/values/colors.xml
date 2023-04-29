@@ -96,4 +96,8 @@
     <color name="main_color">@color/c_3B8848</color>
     <color name="trans">@color/c_00000000</color>
     <color name="main_text_color">@color/c_353535</color>
+
+
+    <color name="authCode">#3689AF</color>
+    <color name="authCodeAfter">#CEC5BBBB</color>
 </resources>
