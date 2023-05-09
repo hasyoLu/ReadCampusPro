@@ -45,21 +45,27 @@ class MainActivity : BaseActivity() {
     // 设置切换标签事件
     bottom_navigation.setOnNavigationItemSelectedListener {
       when (it.itemId) {
-        R.id.navigation_square -> {
+        R.id.navigation_library -> {
           if (viewPager.currentItem != 0) {
             viewPager.currentItem = 0
           }
           return@setOnNavigationItemSelectedListener true
         }
-        R.id.navigation_shelf -> {
+        R.id.navigation_square -> {
           if (viewPager.currentItem != 1) {
             viewPager.currentItem = 1
           }
           return@setOnNavigationItemSelectedListener true
         }
-        R.id.navigation_me -> {
+        R.id.navigation_shelf -> {
           if (viewPager.currentItem != 2) {
             viewPager.currentItem = 2
+          }
+          return@setOnNavigationItemSelectedListener true
+        }
+        R.id.navigation_me -> {
+          if (viewPager.currentItem != 3) {
+            viewPager.currentItem = 3
           }
           return@setOnNavigationItemSelectedListener true
         }

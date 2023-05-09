@@ -71,4 +71,7 @@
     <string name="inputError">手机号或者验证码输入错误</string>
     <string name="sendAutoCodeError">验证失败，请从新登录</string>
 
+    <string name="topBar_text">搜你想搜</string>
+    <string name="title_bookCity">图书馆</string>
+
 </resources>

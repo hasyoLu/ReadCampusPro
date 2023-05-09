@@ -202,6 +202,9 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.8.1'
     implementation 'com.squareup.okio:okio:2.2.2'
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //banner轮播
+    implementation 'io.github.youth5201314:banner:2.2.2'
 }
 
 apply from: "$rootDir/spotless.gradle"
