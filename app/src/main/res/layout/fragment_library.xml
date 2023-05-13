@@ -9,14 +9,21 @@
         android:background="@color/main_color"
         android:orientation="vertical">
         <include
+            android:id="@+id/libary_topbar"
             layout="@layout/libary_topbar"/>
 
         <com.youth.banner.Banner
             android:id="@+id/topbar_banner"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_margin="8dp" />
-
+        <include
+            android:id="@+id/libabry_recommend"
+            layout="@layout/libabry_recommend"/>
+        <include
+            android:id="@+id/libabry_more"
+            layout="@layout/libabry_more"/>
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

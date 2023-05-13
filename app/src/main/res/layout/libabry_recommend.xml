@@ -13,7 +13,7 @@
         android:textColor="#1E1D1D"
         android:textSize="18sp"
         android:textStyle="normal"
-        android:id="@+id/recommend_text"
+        android:id="@+id/more_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
     <ImageView
@@ -25,7 +25,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/recommend_1"
-        app:layout_constraintTop_toBottomOf="@id/recommend_text"
+        app:layout_constraintTop_toBottomOf="@id/more_text"
         />
     <ImageView
         android:layout_width="100dp"
@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toRightOf="@id/recommend_0"
         app:layout_constraintRight_toLeftOf="@id/recommend_2"
-        app:layout_constraintTop_toBottomOf="@id/recommend_text"
+        app:layout_constraintTop_toBottomOf="@id/more_text"
         />
     <ImageView
         android:layout_width="100dp"
@@ -44,7 +44,7 @@
         android:src="@mipmap/ic_launcher"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toRightOf="@id/recommend_1"
-        app:layout_constraintTop_toBottomOf="@id/recommend_text"
+        app:layout_constraintTop_toBottomOf="@id/more_text"
         app:layout_constraintRight_toRightOf="parent"
         />
     <ImageView
