@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hasyolu.readcampus">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
     <dist:module dist:instant="true" />
-
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
@@ -13,6 +17,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:name="com.hasyolu.readcampus.App"
@@ -23,11 +28,15 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
         <activity
             android:name="com.hasyolu.readcampus.ui.login.LoginActivity"
             android:exported="false" />
-
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities=".BmobContentProvider">
+        </provider>
         <provider
             android:name="com.hasyolu.readcampus.base.ContextProvider"
             android:authorities="${applicationId}.contextprovider"
@@ -44,10 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <provider
-            android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities=".BmobContentProvider">
-        </provider>
 
     </application>
 

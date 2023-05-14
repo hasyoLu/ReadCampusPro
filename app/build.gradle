@@ -82,6 +82,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.lifecycleVersion"
     implementation "androidx.room:room-runtime:$versions.roomVersion"
     implementation "androidx.room:room-ktx:$versions.roomVersion"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     kapt "androidx.room:room-compiler:$versions.roomVersion"
     testImplementation "androidx.arch.core:core-testing:$versions.archCompomentVersion"
 
@@ -205,6 +207,8 @@ dependencies {
 
     //banner轮播
     implementation 'io.github.youth5201314:banner:2.2.2'
+
+    implementation 'com.github.testpress:MPAndroidChart:v3.0.0-beta2'
 }
 
 apply from: "$rootDir/spotless.gradle"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_libraryFragment">
+
+
+    <fragment
+        android:id="@+id/navigation_libraryFragment"
+        android:name="com.hasyolu.readcampus.ui.library.LibraryFragment"
+        android:label="LibraryFragment" >
+        <action
+            android:id="@+id/action_libraryFragment_to_squareFragment"
+            app:destination="@id/navigation_squareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_shelfFragment"
+        android:name="com.hasyolu.readcampus.ui.shelf.ShelfFragment"
+        android:label="ShelfFragment" />
+    <fragment
+        android:id="@+id/navigation_meFragment"
+        android:name="com.hasyolu.readcampus.ui.me.MeFragment"
+        android:label="MeFragment" />
+    <fragment
+        android:id="@+id/navigation_squareFragment"
+        android:name="com.hasyolu.readcampus.ui.square.SquareFragment"
+        android:label="SquareFragment" />
+</navigation>

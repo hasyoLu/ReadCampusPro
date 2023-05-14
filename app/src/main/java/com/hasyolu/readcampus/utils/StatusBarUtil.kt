@@ -23,10 +23,22 @@ object StatusBarUtil {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 val window: Window = activity.window
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                window.setStatusBarColor(activity.resources.getColor(colorResId))
+                window.statusBarColor = activity.resources.getColor(colorResId)
             }
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+    }
+
+    //设置字体颜色，true表示黑色
+    fun setWindowLightStatusBar(activity: Activity, shouldChangeStatusBarTintToDark: Boolean) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val decor: View = activity.window.decorView
+            if (shouldChangeStatusBarTintToDark) {
+                decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            } else {
+                decor.systemUiVisibility = 0
+            }
         }
     }
 

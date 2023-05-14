@@ -1,7 +1,8 @@
 package com.hasyolu.readcampus.ui.library
 
-import android.R.attr
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +13,21 @@ import androidx.annotation.VisibleForTesting
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.input.input
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
+import com.hasyolu.readcampus.R
 import com.hasyolu.readcampus.databinding.FragmentLibraryBinding
 import com.hasyolu.readcampus.model.BookBean
+import com.hasyolu.readcampus.ui.main.MainActivity
 import com.hasyolu.readcampus.ui.novelRead.NovelReadActivity
 import com.hasyolu.readcampus.ui.square.RVOScrollListener
 import com.hasyolu.readcampus.ui.square.SquareAdapter
+import com.hasyolu.readcampus.ui.square.SquareFragment
 import com.youth.banner.indicator.CircleIndicator
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -88,15 +94,29 @@ class LibraryFragment : Fragment() {
 
         initRecyclerView()
         initBanner()
-
     }
 
+    @SuppressLint("CheckResult")
     private fun initListener() {
         topIcBookCity.setOnClickListener {
-
+            findNavController().navigate(R.id.action_libraryFragment_to_squareFragment)
         }
         topSearch.setOnClickListener {
-
+            MaterialDialog(requireContext()).show {
+                title(text = "搜索小说")
+                input(
+                    hint = "输入 书名、作者",
+                    inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
+                ) { _, text ->
+                    val keyword = text.toString()
+                    if (keyword.isNotBlank()) {
+                        searchData(keyWord = keyword)
+                    } else {
+                        libraryViewModel.toastMsg("关键字不能为空")
+                    }
+                }
+                positiveButton(text = "搜索")
+            }
         }
 
         // 点击项目事件
@@ -129,8 +149,7 @@ class LibraryFragment : Fragment() {
             libraryViewModel.fetchSearch(1)
         }
         binding.libabryRecommend.recommendChange.setOnClickListener {
-            val typeName = libraryViewModel.getTypes()[0]
-            searchData(typeName = typeName)
+            val typeName = libraryViewModel.getTypes()[3]
             libraryViewModel.fetchRecommendDate(typeName)
         }
 
@@ -141,12 +160,10 @@ class LibraryFragment : Fragment() {
         val parseName = libraryViewModel.getParses()[0]
         libraryViewModel.fetchShopName(parseName)
 
-        val typeName = libraryViewModel.getTypes()[0]
+        val typeName = libraryViewModel.getTypes()[10]
+        val recommendTypeName = libraryViewModel.getTypes()[3]
         searchData(typeName = typeName)
-        libraryViewModel.fetchRecommendDate(typeName)
-
-
-
+        libraryViewModel.fetchRecommendDate(recommendTypeName)
 
         //错误通知事件
         libraryViewModel.toast.observe(viewLifecycleOwner) {
@@ -257,7 +274,6 @@ class LibraryFragment : Fragment() {
         if (keyWord.isBlank()) {
             // 根据类型搜索
             libraryViewModel.fetchSearchType(typeName, 1)
-
         } else {
             //根据关键字搜索
             libraryViewModel.fetchSearchKeyWord(keyWord, 1)

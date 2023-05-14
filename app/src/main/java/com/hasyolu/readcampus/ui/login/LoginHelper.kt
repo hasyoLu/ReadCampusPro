@@ -11,6 +11,10 @@ object LoginHelper {
         return SpUtil.getBooleanValue("isLogin",false)
     }
 
+    fun reSetLogin() {
+        saveLoginInformationToSp("", false)
+    }
+
     fun querySpNumber() : String?{
         return SpUtil.getStringValue("number", null)
     }

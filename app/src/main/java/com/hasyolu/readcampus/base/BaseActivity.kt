@@ -33,6 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
     LogUtil.i(TAG, "onCreate", savedInstanceState)
     setContentView(getRLayout())
     StatusBarUtil.setWindowStatusBarColor(this, R.color.main_color)
+    StatusBarUtil.setWindowLightStatusBar(this, true)
 
     initView()
     initListener()
