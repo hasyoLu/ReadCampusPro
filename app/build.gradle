@@ -9,13 +9,13 @@ apply from: "$rootDir/dependencies.gradle"
 android {
     compileSdkVersion versions.compileSdk
     defaultConfig {
-        applicationId "com.woodnoisu.reader"
+        applicationId "com.hasyolu.readcampus"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
         versionName versions.versionName
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "com.woodnoisu.reader.AppTestRunner"
+        testInstrumentationRunner "com.hasyolu.readcampus.AppTestRunner"
 
         javaCompileOptions {
             annotationProcessorOptions {

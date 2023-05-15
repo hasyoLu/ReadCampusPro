@@ -10,7 +10,9 @@ import android.net.Uri
 import android.os.Build
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.util.Base64
 import androidx.annotation.RequiresApi
+import java.io.ByteArrayOutputStream
 
 object CameraUtil {
 
@@ -117,4 +119,23 @@ object CameraUtil {
         return path
     }
 
+    /**
+    *  Base64编码
+    */
+    fun base64Encode(bitmap: Bitmap): String {
+        val baos = ByteArrayOutputStream()
+        //读取图片到ByteArrayOutputStream
+        bitmap.compress(Bitmap.CompressFormat.PNG, 40, baos) //参数如果为100那么就不压缩
+
+        val bytes: ByteArray = baos.toByteArray()
+        return Base64.encodeToString(bytes, Base64.DEFAULT)
+    }
+
+    /**
+     * Base64解码
+     */
+    fun base64Decode(photoString : String) : Bitmap{
+        val input = Base64.decode(photoString, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(input,0,input.size)
+    }
 }

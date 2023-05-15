@@ -35,7 +35,7 @@
             android:exported="false" />
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities=".BmobContentProvider">
+            android:authorities="com.hasyolu.readcampus.BmobContentProvider">
         </provider>
         <provider
             android:name="com.hasyolu.readcampus.base.ContextProvider"

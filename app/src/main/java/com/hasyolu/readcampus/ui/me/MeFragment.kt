@@ -3,6 +3,7 @@ package com.hasyolu.readcampus.ui.me
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
@@ -59,6 +60,11 @@ class MeFragment : Fragment() {
 
     private val takePictureLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
         bitmap ?: return@registerForActivityResult
+        updateImage(bitmap)
+    }
+
+    private fun updateImage(bitmap: Bitmap) {
+        SpUtil.setStringValue("me_image", CameraUtil.base64Encode(bitmap))
         Glide.with(requireActivity()).load(bitmap).into(imageView)
     }
 
@@ -66,7 +72,7 @@ class MeFragment : Fragment() {
         if(result.resultCode == Activity.RESULT_OK){
             val bitmap = result.data?.let { CameraUtil.getImageBitMapApi29Down(it,requireContext()) }
             bitmap ?: return@registerForActivityResult
-            Glide.with(requireActivity()).load(bitmap).into(imageView)
+            updateImage(bitmap)
         }
     }
 
@@ -143,6 +149,12 @@ class MeFragment : Fragment() {
     }
 
     private fun initData() {
+
+        SpUtil.getStringValue("me_image")?.let {
+            Glide.with(requireActivity()).load(CameraUtil.base64Decode(it)).into(imageView)
+        }
+
+
         initChartData()
 
         // 是否音量键控制翻页

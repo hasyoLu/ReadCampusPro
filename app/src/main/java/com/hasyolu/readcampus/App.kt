@@ -25,6 +25,6 @@ class App() : Application(){
     }
 
     private fun initBMOB() {
-        Bmob.initialize(this, "c9cdfcef07b2af32b45776233231a8aa")
+        Bmob.initialize(this, "f121550d48ca42362b714cb135a8453b")
     }
 }
